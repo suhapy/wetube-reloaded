@@ -13,10 +13,10 @@ const PORT = 4000;
 // express application 생성, express 설계를 위한 규칙
 const app = express();
 const logger = morgan("dev");
-app.use(logger);
 
 // Routers
-
+app.set("view engine", "pug");
+app.use(logger);
 app.use("/", grobalRouter);
 app.use("/users", userRouter);
 app.use("/videos", videoRouter);
