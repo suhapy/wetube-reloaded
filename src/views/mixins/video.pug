@@ -1,0 +1,9 @@
+//- mixin mixinName(variables)
+mixin video(info)
+  div
+    h4= info.title
+    ul 
+      li #{ info.rating }/5
+      li #{ info.comments } comments.
+      li Posted #{ info.cratedAt }
+      li #{ info.views } views.
