@@ -1,4 +1,8 @@
 extends base.pug
 
 block content
-  h1 Edit your Videos!
+  h4 Change Title of video
+  //- action은 어디로 데이터를 보낼 것인지 기본값은 현재 페이지 주소, method의 기본값은 GET
+  form(method="POST")
+    input(name="title", placeholder="Video Title", value=video.title, required)
+    input(value="Save", type="submit")

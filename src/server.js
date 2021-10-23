@@ -14,11 +14,13 @@ const PORT = 4000;
 const app = express();
 const logger = morgan("dev");
 
-// Routers
 app.set("view engine", "pug");
 // expressjs의 view engine default값을 변경해준다.
 app.set("views", process.cwd() + "/src/views");
+
 app.use(logger);
+
+// Routers
 app.use("/", grobalRouter);
 app.use("/users", userRouter);
 app.use("/videos", videoRouter);
