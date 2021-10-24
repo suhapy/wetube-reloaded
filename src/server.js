@@ -1,4 +1,5 @@
 // express라는 package를 express라는 이름으로 import
+import "./db";
 import express from "express";
 import morgan from "morgan";
 
@@ -19,6 +20,7 @@ app.set("view engine", "pug");
 app.set("views", process.cwd() + "/src/views");
 
 app.use(logger);
+app.use(express.urlencoded({ extended: true }));
 
 // Routers
 app.use("/", grobalRouter);
@@ -27,6 +29,6 @@ app.use("/videos", videoRouter);
 
 // app.listen의 callback 함수
 const handleListening = () =>
-  console.log(`server listening on port http://localhost:${PORT} 🚀`);
+  console.log(`✅ Server listening on port http://localhost:${PORT} 🚀`);
 
 app.listen(PORT, handleListening);
